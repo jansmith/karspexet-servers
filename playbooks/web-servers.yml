@@ -1,0 +1,55 @@
+---
+
+- hosts: shell-servers
+#  roles:
+#    - karspexet-users
+  tasks:
+
+#    - name: Remove packages
+#      rpm: name={{ item }} state=absent
+#      with_items:
+#        - exim4  # we use postfix
+
+    - name: Install packages
+      rpm: name={{ item }} state=present
+      with_items:
+        # Libs and core apps
+        - libnss-db
+        - ntpdate
+        - postfix
+
+        # Nice to have
+        - sharutils
+        - screen
+        - tmux
+        - mailutils
+
+        # CMS (source code management)
+        - rcs
+        - rcs-blame
+        - git
+        - subversion
+        - cvs
+
+    # Update nsswitch.conf so we loads our users from "db"
+#    - name: Update nsswitch.conf (1/2)
+#      lineinfile:
+#        dest: /etc/nsswitch.conf
+#        regexp: "^passwd"
+#        line: "passwd:         compat db"
+#      notify: regen local user cache
+#    - name: Update nsswitch.conf (2/2)
+#      lineinfile:
+#        dest: /etc/nsswitch.conf
+#        regexp: "^shadow"
+#        line: "shadow:         compat db"
+#      notify: regen local user cache
+#
+#    # Update the db pam module and point it to the correct path
+#    - name: Update /etc/default/libnss-db
+#      lineinfile:
+#        dest: /etc/default/libnss-db
+#        regexp: "^DBS"
+#        line: "DBS = passwd shadow"
+#      notify: regen local user cache
+

@@ -1,0 +1,7 @@
+---
+
+# This is your rolepath
+galaxy_path: /tmp/ansible-roles/roles
+
+# Location to keep versioned roles
+galaxy_versioned_path: /tmp/ansible-roles/versions

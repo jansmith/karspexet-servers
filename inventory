@@ -1,0 +1,12 @@
+[biljett-servers]
+biljett-utv.karspexet.se
+biljett2.karspexet.se
+
+[web-servers]
+karspexet-web.stacken.kth.se
+web.karspexet.se
+web2.karspexet.se
+
+[kvm-servers]
+starfish-prime.stacken.kth.se
+

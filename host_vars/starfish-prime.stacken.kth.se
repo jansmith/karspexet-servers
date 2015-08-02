@@ -1,0 +1,27 @@
+---
+
+network_config:
+  - device_name: eno1
+    device_mac: "00:1e:4f:40:42:f9"
+    device_proto: static
+    device_addr: 10.0.32.30
+    device_netmask: 255.255.255.0
+    device_ipv6: "no"
+  - device_name: eno2
+    device_mac: "00:1e:4f:40:42:fb"
+    device_bridge: bridge0
+    device_proto: none
+  - device_name: bridge0
+    device_proto: static
+    device_addr: 130.237.234.30
+    device_addr6: 2001:6b0:1:ea::30
+    device_gateway6: "2001:6b0:1:ea::1/64"
+    device_netmask: 255.255.255.0
+    device_gateway: 130.237.234.1
+    device_dns1: 130.237.72.200
+    device_dns2: 130.237.72.201
+    device_type: Bridge
+
+motd:
+  - "This is a KVM host managed by Ansible."
+
